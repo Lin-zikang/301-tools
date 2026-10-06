@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="工具大全已正式迁移至新域名 tools.ug2.team，隶属于小学二年级联合会。">
+    <meta name="robots" content="noindex">
+    <title>工具大全 · 域名迁移公告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue",
+                Arial, sans-serif;
+            background: #f5f6f8;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        .notice {
+            width: 100%;
+            max-width: 620px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 48px 44px 40px;
+        }
+
+        /* 顶部标识 */
+        .notice-header {
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 32px;
+        }
+
+        /* Logo */
+        .logo-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .notice-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: #2563eb;
+            background: #eff6ff;
+            border: 1px solid #dbeafe;
+            border-radius: 4px;
+            padding: 3px 10px;
+            margin-bottom: 16px;
+        }
+
+        .notice-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            letter-spacing: -0.01em;
+            line-height: 1.4;
+        }
+
+        .notice-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        /* 域名对照 */
+        .domain-box {
+            margin-bottom: 28px;
+        }
+
+        .domain-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .domain-row:first-child {
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .domain-label {
+            flex-shrink: 0;
+            width: 56px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #9ca3af;
+        }
+
+        .domain-url {
+            font-size: 15px;
+            font-family: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+            word-break: break-all;
+            line-height: 1.6;
+        }
+
+        .domain-url.old {
+            color: #9ca3af;
+            text-decoration: line-through;
+            text-decoration-color: #d1d5db;
+        }
+
+        .domain-url.new {
+            color: #1d4ed8;
+            font-weight: 600;
+        }
+
+        /* 提示 */
+        .tip {
+            font-size: 13px;
+            color: #6b7280;
+            background: #fafafa;
+            border-left: 3px solid #d1d5db;
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+
+        /* 按钮 */
+        .action-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            background: #2563eb;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.15s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .action-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .action-btn:active {
+            background: #1e40af;
+        }
+
+        /* 正文 */
+        .notice-body {
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.85;
+        }
+
+        .notice-body p {
+            margin-bottom: 12px;
+        }
+
+        .notice-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .notice-body strong {
+            color: #111827;
+            font-weight: 600;
+        }
+
+        .notice-body a {
+            color: #1d4ed8;
+            text-decoration: none;
+        }
+
+        .notice-body a:hover {
+            text-decoration: underline;
+        }
+
+        /* 页脚 */
+        .notice-footer {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 13px;
+            color: #9ca3af;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 16px;
+                align-items: flex-start;
+                padding-top: 32px;
+            }
+
+            .notice {
+                padding: 32px 22px 28px;
+                border-radius: 10px;
+            }
+
+            .logo {
+                width: 96px;
+            }
+
+            .notice-title {
+                font-size: 20px;
+            }
+
+            .notice-subtitle {
+                font-size: 13px;
+            }
+
+            .domain-row {
+                flex-direction: column;
+                gap: 4px;
+                padding: 12px 0;
+            }
+
+            .domain-label {
+                width: auto;
+            }
+
+            .domain-url {
+                font-size: 13px;
+            }
+
+            .action-btn {
+                font-size: 15px;
+                padding: 13px 20px;
+            }
+
+            .notice-body {
+                font-size: 13px;
+            }
+
+            .notice-footer {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .notice {
+                padding: 56px 52px 44px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="notice" role="main">
+
+        <header class="notice-header">
+            <!-- Logo -->
+            <div class="logo-wrap">
+                <img
+                    class="logo"
+                    src="https://user-assets.sxlcdn.com/images/1209238/FlWuslNmGTHt1EipxUtq2GI6zqnN.png?imageMogr2/strip/auto-orient/thumbnail/1200x9000%3E/quality/90!/format/png"
+                    alt="工具大全 Logo"
+                    width="120"
+                    height="auto"
+                    loading="eager"
+                >
+            </div>
+
+            <span class="notice-tag">重要公告</span>
+            <h1 class="notice-title">「工具大全」域名迁移通知</h1>
+            <p class="notice-subtitle">服务已升级，请使用新域名访问</p>
+        </header>
+
+        <section class="domain-box">
+            <div class="domain-row">
+                <span class="domain-label">原域名</span>
+                <span class="domain-url old">useful-tools.top</span>
+            </div>
+            <div class="domain-row">
+                <span class="domain-label">新域名</span>
+                <span class="domain-url new">tools.ug2.team</span>
+            </div>
+        </section>
+
+        <p class="tip">原域名将停止服务，请及时更新浏览器书签与收藏夹。</p>
+
+        <a class="action-btn" href="https://tools.ug2.team" rel="noopener">前往新站</a>
+
+        <section class="notice-body">
+            <p><strong>关于本次迁移</strong></p>
+            <p>「工具大全」自上线以来，始终致力于为用户提供简洁、高效的在线工具集合。随着服务规模持续扩大，我们对底层基础设施进行了全面升级，并正式启用全新域名。</p>
+            <p>新域名 <strong>tools.ug2.team</strong> 在访问速度、稳定性与数据安全方面均有显著提升。所有工具功能均已完整迁移，您的使用体验将无缝衔接。</p>
+            <p>给您带来的不便，我们深表歉意。感谢您的理解与配合。</p>
+
+            <p style="margin-top:20px;"><strong>服务归属声明</strong></p>
+            <p>「工具大全」隶属于<strong>小学二年级联合会</strong>（<a href="https://ug2.team" target="_blank" rel="noopener">https://ug2.team</a>），由该组织统一运营与维护。本服务及相关内容的一切权利与解释权归小学二年级联合会所有。</p>
+        </section>
+
+        <footer class="notice-footer">
+            <span>工具大全 · 安全团队</span>
+            <span id="footerDate"></span>
+        </footer>
+
+    </main>
+
+    <script>
+        (function () {
+            var now = new Date();
+            document.getElementById('footerDate').textContent =
+                now.getFullYear() + '年' + (now.getMonth() + 1) + '月';
+        })();
+    </script>
+
+</body>
+</html>
